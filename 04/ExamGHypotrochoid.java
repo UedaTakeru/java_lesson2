@@ -7,6 +7,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,7 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-public class ExamGEpitrochoid extends JFrame implements ActionListener, Runnable {
+public class ExamGHypotrochoid extends JFrame implements ActionListener, Runnable {
     // UI部品
     private JButton btnStart;
     private JLabel lblRc;
@@ -31,8 +32,8 @@ public class ExamGEpitrochoid extends JFrame implements ActionListener, Runnable
     // 名前
     private final String myName = "上田 剛瑠"; // ←ここを自分の名前に変更
 
-    public ExamGEpitrochoid() {
-        setTitle("外トロコイド（エピトロコイド）");
+    public ExamGHypotrochoid() {
+        setTitle("内トロコイド（ハイポトロコイド）");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(700, 600);
         setLocationRelativeTo(null);
@@ -78,12 +79,11 @@ public class ExamGEpitrochoid extends JFrame implements ActionListener, Runnable
         double theta = 0.0;
         double dtheta = 0.01;
         double end = 2 * Math.PI * rot;
-        int prevX = -1, prevY = -1;
         drawPanel.setParams(rc, rm, rd, rot);
         while (theta <= end && running) {
-            // エピトロコイド座標計算
-            double R = rc + rm;
-            double x = R * Math.cos(theta) - rd * Math.cos(R * theta / rm);
+            // ハイポトロコイド座標計算
+            double R = rc - rm;
+            double x = R * Math.cos(theta) + rd * Math.cos(R * theta / rm);
             double y = R * Math.sin(theta) - rd * Math.sin(R * theta / rm);
             drawPanel.updateTrace(x, y, theta);
             try { Thread.sleep(10); } catch (InterruptedException ex) {}
@@ -139,8 +139,8 @@ public class ExamGEpitrochoid extends JFrame implements ActionListener, Runnable
             g.setColor(Color.gray);
             g.drawOval(cx - (int)(rc * scale), cy - (int)(rc * scale), (int)(rc * scale * 2), (int)(rc * scale * 2));
             // 動円
-            double mx = (rc + rm) * Math.cos(curTheta);
-            double my = (rc + rm) * Math.sin(curTheta);
+            double mx = (rc - rm) * Math.cos(curTheta);
+            double my = (rc - rm) * Math.sin(curTheta);
             int mcx = cx + (int)(mx * scale);
             int mcy = cy - (int)(my * scale);
             g.setColor(Color.blue);
@@ -160,8 +160,9 @@ public class ExamGEpitrochoid extends JFrame implements ActionListener, Runnable
     }
 
     public static void main(String[] args) {
+        System.out.println("programmed by 上田剛瑠");
         SwingUtilities.invokeLater(() -> {
-            ExamGEpitrochoid f = new ExamGEpitrochoid();
+            ExamGHypotrochoid f = new ExamGHypotrochoid();
             f.setVisible(true);
         });
     }

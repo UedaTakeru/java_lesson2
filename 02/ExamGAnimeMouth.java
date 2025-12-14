@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -35,6 +36,7 @@ public class ExamGAnimeMouth extends JPanel implements Runnable {
     }
 
     public static void main(String[] args) {
+        System.out.println("programmed by 上田剛瑠");
         JFrame frame = new JFrame("ExamGAnimeMouth");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(new ExamGAnimeMouth());

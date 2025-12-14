@@ -1,5 +1,11 @@
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class ExamGFlyingMessage extends JPanel implements Runnable {
     String message;
@@ -33,6 +39,7 @@ public class ExamGFlyingMessage extends JPanel implements Runnable {
     }
 
     public static void main(String[] args) {
+        System.out.println("programmed by 上田剛瑠");
         String message = args.length > 0 ? args[0] : "Hello, World!";
         JFrame frame = new JFrame("ExamGFlyingMessage");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

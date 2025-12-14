@@ -1,5 +1,6 @@
 public class ExamThread1 {
     public static void main(String[] args) {
+        System.out.println("programmed by 上田剛瑠");
         Thread t1 = new Thread(new MyThread("上田剛瑠1"));
         Thread t2 = new Thread(new MyThread("上田剛瑠2"));
         t1.start();

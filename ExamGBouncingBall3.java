@@ -3,6 +3,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -57,6 +58,7 @@ public class ExamGBouncingBall3 extends JPanel implements Runnable, ActionListen
     }
 
     public static void main(String[] args) {
+        System.out.println("programmed by 上田剛瑠");
         int x = args.length > 0 ? Integer.parseInt(args[0]) : 100;
         int y = args.length > 1 ? Integer.parseInt(args[1]) : 100;
         int vx = args.length > 2 ? Integer.parseInt(args[2]) : 3;

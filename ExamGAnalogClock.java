@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.Calendar;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -49,6 +50,7 @@ public class ExamGAnalogClock extends JPanel implements Runnable {
     }
 
     public static void main(String[] args) {
+        System.out.println("programmed by 上田剛瑠");
         JFrame frame = new JFrame("ExamGAnalogClock");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(new ExamGAnalogClock());

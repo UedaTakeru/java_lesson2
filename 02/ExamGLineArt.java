@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -46,6 +47,7 @@ public class ExamGLineArt extends JPanel implements Runnable {
     }
 
     public static void main(String[] args) {
+        System.out.println("programmed by 上田剛瑠");
         int x1 = args.length > 0 ? Integer.parseInt(args[0]) : 50;
         int y1 = args.length > 1 ? Integer.parseInt(args[1]) : 50;
         int vx1 = args.length > 2 ? Integer.parseInt(args[2]) : 2;
